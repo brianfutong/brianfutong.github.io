@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Brian Tong — Senior Product Manager, IA & Product Builder. 10+ anos em B2B2C SaaS, payments e e-commerce. Cases de Matrículas, Cobranças/Pix, LIVUR e Kadris.">
+<meta property="og:title" content="Brian Tong · Portfólio de Produto">
+<meta property="og:description" content="Senior PM · IA & Product Builder. Do zero à escala: 350+ escolas, R$ 200M+ transacionados, produtos construídos com IA.">
+<meta property="og:image" content="https://brianfutong.github.io/assets/og-image.jpg">
+<meta property="og:url" content="https://brianfutong.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<title>Brian Tong Portfólio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: fixed 1920×1080 stage (frontend-slides). Dark "product launch" look: ink canvas, one mint signal,
+   Unbounded only for headlines and big numbers, Geist for reading, Geist Mono for labels. Real photos and product screenshots carry the visuals. */
+:root {
+  /* === THEME TOKENS (single committed dark look) === */
+  --ink: #0B1220;
+  --ink-2: #111B2C;
+  --ink-3: #172338;
+  --line: #24334A;
+  --fg: #EEF2F1;
+  --soft: #B7C4CE;
+  --muted: #8193A5;
+  --mint: #5CE0C6;
+  --mint-dim: rgba(92, 224, 198, 0.14);
+  --stage-bg: #060A12;
+  --slide-bg: var(--ink);
+
+  --f-display: 'Unbounded', 'Arial Black', sans-serif;
+  --f-body: 'Geist', 'Helvetica Neue', Arial, sans-serif;
+  --f-mono: 'Geist Mono', ui-monospace, Menlo, monospace;
+
+  --pad: 120px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: dark;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === FIXED 16:9 STAGE (viewport-base.css) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 1000; }
+@media print {
+  html, body { width: 1920px; height: auto; overflow: visible; background: var(--ink); }
+  .deck-viewport { position: static; overflow: visible; }
+  .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+  .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  .deck-controls, .progress { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === BASE TYPE === */
+.slide { color: var(--fg); font-family: var(--f-body); }
+.glow { position: absolute; left: -260px; top: -260px; width: 1000px; height: 1000px; border-radius: 50%; background: radial-gradient(rgba(47, 211, 181, 0.16), transparent 64%); pointer-events: none; }
+.glow.r { left: auto; right: -320px; top: auto; bottom: -360px; }
+.chrome { position: absolute; left: var(--pad); right: var(--pad); top: 60px; display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); z-index: 3; }
+.chrome b { color: var(--fg); font-weight: 500; }
+.tag { font-family: var(--f-body); font-size: 25px; font-weight: 500; letter-spacing: 0; color: var(--mint); }
+h1, h2 { font-family: var(--f-display); font-weight: 700; letter-spacing: -0.035em; text-wrap: balance; }
+h2 { font-weight: 500; letter-spacing: -0.03em; }
+h1 { font-size: 100px; line-height: 1.06; }
+h2 { font-size: 66px; line-height: 1.08; }
+h2 em, h1 em { font-style: normal; color: var(--mint); }
+h3 { font-family: var(--f-body); font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.01em; }
+p { font-size: 27px; line-height: 1.45; color: var(--soft); }
+.lead { font-size: 31px; line-height: 1.42; color: var(--soft); }
+.label { font-family: var(--f-body); font-size: 22px; font-weight: 500; color: var(--muted); }
+.big { font-family: var(--f-display); font-weight: 500; letter-spacing: -0.025em; line-height: 1; font-variant-numeric: tabular-nums; }
+
+/* === LAYOUT HELPERS === */
+.body { position: absolute; left: var(--pad); right: var(--pad); top: 160px; bottom: 100px; display: flex; flex-direction: column; gap: 36px; z-index: 2; }
+.cols { display: grid; gap: 80px; min-height: 0; }
+.cols > * { min-width: 0; }
+.stack { display: flex; flex-direction: column; gap: 22px; }
+
+/* Metric strip: dashed dividers, mint first number */
+.strip { display: flex; border-top: 1.5px solid var(--line); }
+.strip > div { padding: 26px 48px 0 0; margin-right: 48px; border-right: 1.5px dashed var(--line); }
+.strip > div:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.strip .big { font-size: 56px; display: block; }
+.strip .big.m { color: var(--mint); }
+.strip small { display: block; margin-top: 12px; font-family: var(--f-body); font-size: 21px; color: var(--muted); line-height: 1.35; }
+
+/* Rows (timeline / ledger) */
+.rows { display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: 170px 1fr auto; gap: 30px; align-items: baseline; padding: 22px 0; border-bottom: 1.5px dashed var(--line); }
+.row:first-child { border-top: 1.5px solid var(--line); }
+.row .k { font-family: var(--f-mono); font-size: 20px; color: var(--muted); letter-spacing: 0.04em; }
+.row .v { font-size: 28px; font-weight: 500; }
+.row .v small { display: block; font-size: 23px; font-weight: 400; color: var(--muted); margin-top: 6px; }
+.row .a { font-family: var(--f-mono); font-size: 22px; color: var(--mint); white-space: nowrap; }
+
+/* Cards used only where a block must stand apart */
+.card { background: var(--ink-2); border: 1.5px solid var(--line); border-radius: 14px; padding: 30px 32px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.card .step { font-family: var(--f-body); font-size: 20px; font-weight: 500; color: var(--mint); }
+.card p { font-size: 23px; line-height: 1.45; }
+.card .ex { margin-top: 6px; padding-top: 16px; border-top: 1.5px dashed var(--line); font-size: 23px; line-height: 1.45; color: var(--fg); }
+.card .ex b { display: block; font-family: var(--f-mono); font-weight: 400; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+
+ul.ticks { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+ul.ticks li { position: relative; padding-left: 38px; font-size: 24px; line-height: 1.42; color: var(--soft); }
+ul.ticks li::before { content: ""; position: absolute; left: 0; top: 13px; width: 16px; height: 2px; background: var(--mint); }
+ul.ticks li b { color: var(--fg); font-weight: 600; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.chip { font-family: var(--f-mono); font-size: 18px; padding: 9px 15px; border: 1.5px solid var(--line); border-radius: 999px; color: var(--soft); }
+.chip.m { border-color: var(--mint); color: var(--mint); }
+a.link { font-family: var(--f-mono); font-size: 23px; color: var(--mint); text-decoration: none; border-bottom: 1.5px solid var(--mint); align-self: flex-start; }
+
+/* Screenshots */
+.shot { border-radius: 14px; border: 1.5px solid var(--line); overflow: hidden; background: var(--ink-2); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7); }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; max-width: none; max-height: none; }
+.phone { border-radius: 26px; overflow: hidden; border: 1.5px solid #2B3B54; box-shadow: 0 30px 70px -25px rgba(0, 0, 0, 0.75); background: #000; }
+.phone img { display: block; width: 100%; height: auto; max-width: none; max-height: none; }
+
+
+/* === TWO-SIDED FLOW (school web × family app) === */
+.lanes { display: flex; flex-direction: column; gap: 34px; }
+.lane { display: grid; grid-template-columns: 170px repeat(4, 1fr); border-top: 1.5px solid var(--line); padding-top: 22px; }
+.lane .who { font-size: 26px; font-weight: 600; line-height: 1.2; padding-right: 20px; }
+.lane .who small { display: block; margin-top: 8px; font-size: 19px; font-weight: 400; color: var(--muted); }
+.lstep { padding: 0 20px; border-left: 1.5px dashed var(--line); display: flex; flex-direction: column; gap: 8px; }
+.lstep i { font-style: normal; font-family: var(--f-mono); font-size: 17px; color: var(--mint); }
+.lstep span { font-size: 20px; line-height: 1.38; color: var(--soft); }
+.role { font-size: 22px; color: var(--muted); border-left: 3px solid var(--mint); padding-left: 18px; }
+.role b { color: var(--fg); font-weight: 600; }
+.showcase { position: absolute; right: 120px; top: 170px; bottom: 100px; width: 600px; z-index: 2; background: #E9EEF1; border-radius: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 36px; }
+.showcase img { display: block; max-width: none; max-height: none; }
+.showcase .desk { width: 100%; border-radius: 10px; box-shadow: 0 18px 40px -18px rgba(11, 18, 32, 0.35); }
+.showcase .mob { border-radius: 18px; box-shadow: 0 18px 40px -18px rgba(11, 18, 32, 0.35); }
+.showcase .row-imgs { display: flex; gap: 22px; align-items: flex-start; justify-content: center; }
+.showcase .cap { font-family: var(--f-body); font-size: 18px; color: #4B5B6B; align-self: flex-start; }
+
+/* === COVER === */
+.cover-photo { position: absolute; right: 0; top: 0; width: 900px; height: 1080px; background: url("assets/brian-cover.jpg") 50% 30% / cover; }
+.cover-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--ink) 0%, rgba(11, 18, 32, 0.75) 16%, rgba(11, 18, 32, 0) 52%), linear-gradient(0deg, var(--ink) 0%, rgba(11, 18, 32, 0) 30%); }
+
+/* === PIX bar (drawn to scale 0–100%) === */
+.bar { position: relative; height: 44px; border-radius: 6px; background: var(--ink-3); border: 1.5px solid var(--line); overflow: hidden; }
+.bar i { position: absolute; top: 0; bottom: 0; left: 0; display: block; }
+.bar .after { width: 56%; background: var(--mint); transform-origin: left; }
+.bar .before { width: 15%; background: #3A4C66; }
+.slide.visible .bar .after { animation: grow 1.3s var(--ease) 0.35s both; }
+@keyframes grow { from { transform: scaleX(0.27); } to { transform: scaleX(1); } }
+.scale { display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 16px; color: var(--muted); margin-top: 8px; }
+
+/* === PIPELINE (LYVET) === */
+.pipe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.pipe .card { padding: 26px 28px; gap: 10px; }
+.pipe .card h3 { font-size: 27px; }
+.pipe .card p { font-size: 21px; }
+.flag { font-family: var(--f-mono); font-size: 18px; padding: 8px 14px; border-radius: 8px; background: var(--ink-3); color: var(--fg); border: 1.5px solid var(--line); }
+.flag.m { background: var(--mint-dim); border-color: var(--mint); color: var(--mint); }
+
+/* === REVEAL (visible at rest once a slide is active) === */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .d1 { transition-delay: 0.08s; } .slide.visible .d2 { transition-delay: 0.16s; } .slide.visible .d3 { transition-delay: 0.24s; } .slide.visible .d4 { transition-delay: 0.32s; }
+@media print { .reveal { opacity: 1 !important; transform: none !important; } }
+
+/* === CONTROLS (outside the stage) === */
+.deck-controls { display: flex; align-items: center; gap: 4px; background: rgba(17, 27, 44, 0.9); border: 1px solid #24334A; padding: 5px; border-radius: 999px; font-family: var(--f-mono); }
+.deck-controls button { all: unset; cursor: pointer; color: #EEF2F1; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 999px; font-size: 18px; }
+.deck-controls button:hover { background: rgba(255, 255, 255, 0.08); }
+.deck-controls button:focus-visible { outline: 2px solid #5CE0C6; outline-offset: 1px; }
+.deck-controls .count { color: #B7C4CE; font-size: 14px; min-width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+.progress { position: fixed; left: 0; top: 0; height: 3px; background: #5CE0C6; z-index: 1001; transition: width 0.4s var(--ease); }
+</style>
+</head>
+<body>
+
+
+<div class="progress" id="progress"></div>
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+  <!-- === 01 COVER === -->
+  <section class="slide active" data-name="inicio">
+    
+    <div class="cover-photo" role="img" aria-label="Foto de Brian Tong"></div>
+    <div class="chrome"><span><b>Brian Tong</b> · Portfólio</span><span>São Paulo · 2026</span></div>
+    <div class="body" style="right:auto; width:1080px; top:250px; gap:0">
+      <p class="tag reveal">Senior Product Manager · IA &amp; Product Builder</p>
+      <h1 class="reveal d1" style="margin-top:26px">Do zero à escala, <em>agora com IA.</em></h1>
+      <p class="lead reveal d2" style="margin-top:40px; max-width:820px">10+ anos construindo produtos de receita em B2B2C SaaS, payments e e-commerce. 350+ escolas e R$ 200M+ transacionados nas plataformas que construí. Hoje também construo com Claude Code.</p>
+      <div class="reveal d3" style="margin-top:auto; display:flex; flex-direction:column; gap:18px">
+        <p class="label">Produtos que criei do zero · 0 → 1</p>
+        <div class="strip">
+          <div><span class="big m" style="font-size:40px">Matrículas</span><small>300+ escolas</small></div>
+          <div><span class="big" style="font-size:40px">Cobranças</span><small>80+ escolas · Pix</small></div>
+          <div><span class="big" style="font-size:40px">LIVUR</span><small>app iOS</small></div>
+          <div><span class="big" style="font-size:40px">Kadris</span><small>SaaS de IA</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 02 TRAJECTORY === -->
+  <section class="slide" data-name="trajetoria">
+    
+    <div class="chrome"><span><b>Trajetória</b></span><span>2015 → 2026</span></div>
+    <div class="body">
+      <h2 class="reveal" style="max-width:1400px">Do time fundador da ClassApp à Arco Educação, na NASDAQ.</h2>
+      <div class="rows reveal d1">
+        <div class="row"><span class="k">2015–2019</span><span class="v">ClassApp · Founding Team<small>TI, Marketing e Coordenação Comercial. Base levada a 200+ escolas.</small></span><span class="a">0 → 200+</span></div>
+        <div class="row"><span class="k">2019–2022</span><span class="v">isaac · Product Manager &amp; CX Manager<small>Matrículas e Cobranças do zero, mais melhorias no app de comunicação escola-família. Liderei 2 squads a convite do CEO.</small></span><span class="a">churn &lt;1%/mês</span></div>
+        <div class="row"><span class="k">2022–2024</span><span class="v">Arco Educação (NASDAQ: ARCE) · Product Manager<small>Escala de Matrículas, Cobranças recorrentes e Pix.</small></span><span class="a">300+ escolas</span></div>
+        <div class="row"><span class="k">2024–hoje</span><span class="v">LYVET · Founder<small>Lojas próprias em 5 países, operadas com agentes de IA.</small></span><span class="a">BR · US · MX · ES · JP</span></div>
+        <div class="row"><span class="k">2026</span><span class="v">Lyds · Consultor de Produto &amp; IA (Head of Product)<small>CRM com atendente de IA no WhatsApp para clínicas.</small></span><span class="a">IA em produção</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- === 03a ENROLLMENT: HOW IT WORKS === -->
+  <section class="slide" data-name="matriculas-produto">
+    <div class="chrome"><span><b>Case 01</b> · Sistema de Matrículas</span><span>Como funciona</span></div>
+    <div class="body" style="right:auto; width:1030px; gap:30px">
+      <div class="reveal">
+        <p class="tag">Uma jornada, dois lados</p>
+        <h2 style="margin-top:16px; font-size:58px">A escola gerencia no computador. A família resolve tudo pelo celular.</h2>
+      </div>
+      <div class="lanes reveal d1">
+        <div class="lane"><div class="who">Escola<small>painel web</small></div><div class="lstep"><i>01</i><span>Cria a campanha, as propostas e os valores</span></div><div class="lstep"><i>02</i><span>Envia os contratos em massa para as famílias</span></div><div class="lstep"><i>03</i><span>Acompanha assinaturas, pagamentos e pendências</span></div><div class="lstep"><i>04</i><span>Avisa só quem ainda não concluiu</span></div></div>
+        <div class="lane"><div class="who">Família<small>app ClassApp</small></div><div class="lstep"><i>01</i><span>Recebe a proposta de matrícula no app</span></div><div class="lstep"><i>02</i><span>Escolhe a proposta e preenche os dados</span></div><div class="lstep"><i>03</i><span>Assina o contrato digital com validade jurídica</span></div><div class="lstep"><i>04</i><span>Paga a taxa por Pix, boleto ou cartão</span></div></div>
+      </div>
+      <p class="role reveal d2"><b>Meu papel:</b> PM líder do squad, reportando direto ao CEO. Do discovery ao rollout, nas duas pontas (escola e família, web e mobile), orquestrando engenharia, design, CS, suporte, jurídico, financeiro, operações e a Stone, parceira de pagamentos.</p>
+    </div>
+    <div class="showcase reveal d2" style="gap:14px; justify-content:flex-start">
+      <span class="cap">Painel da escola (web)</span>
+      <img class="desk" src="assets/mat-painel.jpg" alt="Painel da escola com o andamento da rematrícula">
+      <span class="cap">App da família</span>
+      <div class="row-imgs"><img class="mob" src="assets/mat-proposta.jpg" alt="Proposta de matrícula recebida no app" style="width:162px"><img class="mob" src="assets/mat-celular.jpg" alt="Contrato e taxa de matrícula no app" style="width:180px"></div>
+    </div>
+  </section>
+
+  <!-- === 03 CASE: ENROLLMENT === -->
+  <section class="slide" data-name="matriculas">
+    
+    <div class="chrome"><span><b>Case 01</b> · Sistema de Matrículas</span><span>Resultado · 2019–2024</span></div>
+    <div class="body">
+      <div class="reveal">
+        <p class="tag">0 → 1 → escala</p>
+        <h2 style="margin-top:18px">Matrículas: do zero a 300+ escolas.</h2>
+      </div>
+      <div class="cols" style="grid-template-columns: 1fr 1fr; flex:1">
+        <div class="stack reveal d1">
+          <p class="label">O que eu fiz</p>
+          <ul class="ticks">
+            <li><b>Lancei o produto do zero</b> e conduzi o discovery com as escolas.</li>
+            <li><b>Escalei para 300+ escolas</b> em cerca de 2 anos.</li>
+            <li><b>Priorizei com 7 áreas:</b> Eng, Design, CS, Suporte, Jurídico, Financeiro e Ops.</li>
+            <li>O produto foi <b>um dos motivos da aquisição</b> da ClassApp pela isaac.</li>
+          </ul>
+        </div>
+        <div class="stack reveal d2">
+          <p class="label">Resultado</p>
+          <div class="strip" style="border-top:none; padding-bottom:28px; border-bottom:1.5px dashed var(--line)">
+            <div style="width:300px"><span class="big m" style="font-size:72px">300+</span><small>escolas usando</small></div>
+            <div><span class="big" style="font-size:72px">R$ 141k</span><small>de MRR</small></div>
+          </div>
+          <div class="strip" style="border-top:none">
+            <div style="width:300px"><span class="big" style="font-size:72px">~80%</span><small>das matrículas confirmadas<br>em 1 mês</small></div>
+            <div><span class="big" style="font-size:72px">&lt;1%</span><small>de falhas no envio<br>de propostas</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- === 04a BILLING: HOW IT WORKS === -->
+  <section class="slide" data-name="cobrancas-produto">
+    <div class="chrome"><span><b>Case 02</b> · Financeiro &amp; ClassPay</span><span>Como funciona</span></div>
+    <div class="body" style="right:auto; width:1030px; gap:30px">
+      <div class="reveal">
+        <p class="tag">Do contrato ao dinheiro na conta da escola</p>
+        <h2 style="margin-top:16px; font-size:58px">Cobrança recorrente, pagamento e conciliação num só produto.</h2>
+      </div>
+      <div class="lanes reveal d1">
+        <div class="lane"><div class="who">Escola<small>web e app</small></div><div class="lstep"><i>01</i><span>Cadastra produtos, planos e contratos, até em massa</span></div><div class="lstep"><i>02</i><span>Configura régua de cobrança, juros, multa e desconto</span></div><div class="lstep"><i>03</i><span>Acompanha recebimentos e inadimplentes</span></div><div class="lstep"><i>04</i><span>Saldo, saques, estornos e relatórios</span></div></div>
+        <div class="lane"><div class="who">Família<small>app ClassApp</small></div><div class="lstep"><i>01</i><span>Recebe a cobrança na conversa com a escola</span></div><div class="lstep"><i>02</i><span>Paga com Pix, boleto ou cartão parcelado</span></div><div class="lstep"><i>03</i><span>Recebe lembretes automáticos antes e depois do vencimento</span></div><div class="lstep"><i>04</i><span>Acha 2ª via e histórico no próprio app</span></div></div>
+      </div>
+      <p class="role reveal d2"><b>Meu papel:</b> PM do Financeiro e dos pagamentos, nas duas pontas, web e mobile. Conduzi a integração com a Stone e alinhei jurídico, financeiro, CS e as escolas em cada regra de cobrança.</p>
+    </div>
+    <div class="showcase reveal d2">
+      <div class="row-imgs" style="gap:6px"><img src="assets/fin-escola.jpg" alt="Escola acompanhando quem pagou uma cobrança" style="width:176px"><img src="assets/fin-cobranca.jpg" alt="Família recebendo a cobrança no app" style="width:176px; margin-top:70px"><img src="assets/fin-lembrete.jpg" alt="Lembrete automático de mensalidade" style="width:176px; margin-top:30px"></div>
+      <span class="cap" style="align-self:center">Escola acompanhando quem pagou · cobrança e lembrete no app da família</span>
+    </div>
+  </section>
+
+  <!-- === 04 CASE: PIX & BILLING === -->
+  <section class="slide" data-name="pix">
+    
+    <div class="chrome"><span><b>Case 02</b> · Financeiro &amp; ClassPay</span><span>Resultado · 2022–2024</span></div>
+    <div class="body">
+      <div class="reveal">
+        <p class="tag">Payments · Monetização</p>
+        <h2 style="margin-top:18px">Pix de 15% para 56% das transações em um trimestre.</h2>
+      </div>
+      <div class="cols" style="grid-template-columns: 1.1fr 1fr; flex:1">
+        <div class="stack reveal d1" style="gap:26px">
+          <p class="label">Adesão ao Pix · % das transações</p>
+          <div><div class="bar"><i class="after"></i><i class="before"></i></div><div class="scale"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div></div>
+          <div class="strip" style="border-top:none; margin-top:10px">
+            <div><span class="big m">R$ 228k</span><small>receita de taxas<br>no trimestre</small></div>
+            <div><span class="big">+40%</span><small>acima da meta<br>de R$ 163k</small></div>
+          </div>
+        </div>
+        <div class="stack reveal d2">
+          <p class="label">Também nessa frente</p>
+          <ul class="ticks">
+            <li><b>Cobranças recorrentes em 80+ escolas,</b> com MRR de R$ 45k+ e R$ 181k+ em receita de taxas.</li>
+            <li><b>Contive um incidente de ~R$ 300 mil:</b> investigação, alinhamento com executivos e controles que zeraram a recorrência.</li>
+            <li><b>R$ 200M+ transacionados</b> pelas soluções de matrícula e cobrança em 350+ escolas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 06 SECTION: BUILT WITH AI === -->
+  <section class="slide" data-name="construido-com-ia">
+    
+    <div class="chrome"><span><b>Construído com IA</b> · projetos próprios</span><span>2024–2026</span></div>
+    <div class="body" style="right:auto; width:760px; justify-content:center">
+      <p class="tag reveal">Além de especificar, eu construo</p>
+      <h2 class="reveal d1" style="font-size:80px">Um app na App Store e um SaaS no ar.</h2>
+      <p class="lead reveal d2">Feitos por mim com Claude Code, do design ao deploy, com testes automatizados e integração contínua.</p>
+    </div>
+    <div class="reveal d2" style="position:absolute; right:120px; top:190px; width:860px; height:420px">
+      <div class="shot" style="height:100%"><img src="assets/kadris-board.jpg" alt="Kadris: projetos de conteúdo passando pelo time de agentes" style="object-position:0 0"></div>
+    </div>
+    <div class="reveal d3" style="position:absolute; right:180px; top:470px; width:250px">
+      <div class="phone"><img src="assets/livur-home.jpg" alt="Tela inicial do app LIVUR"></div>
+    </div>
+  </section>
+
+  <!-- === 07 LIVUR === -->
+  <section class="slide" data-name="livur">
+    
+    <div class="chrome"><span><b>Projeto</b> · LIVUR</span><span>iOS · App Store · 2026</span></div>
+    <div class="body" style="right:auto; width:760px; gap:26px">
+      <div class="reveal">
+        <p class="tag">Live more. Together.</p>
+        <h2 style="margin-top:16px; font-size:54px">App de experiências, do zero à App Store em ~1 mês.</h2>
+      </div>
+      <ul class="ticks reveal d1">
+        <li><b>IA Vivi:</b> sugere experiências e encontra pessoas que querem viver o mesmo.</li>
+        <li><b>Do plano ao rolê:</b> grupo, data, local e parceiros que oferecem a experiência, com chat e agenda.</li>
+        <li><b>Rede social:</b> histórias com fotos e vídeos, lista de vividas, XP e conquistas.</li>
+      </ul>
+      <div class="rows reveal d2">
+        <div class="row" style="grid-template-columns:150px 1fr"><span class="k">STACK</span><span class="v">React Native, Expo e Supabase</span></div>
+        <div class="row" style="grid-template-columns:150px 1fr"><span class="k">QUALIDADE</span><span class="v">CI, testes automatizados · 428 commits · PT e EN</span></div>
+      </div>
+      <a class="link reveal d3" href="https://apps.apple.com/br/app/livur/id6760679891" target="_blank" rel="noopener">Ver na App Store ↗</a>
+    </div>
+    <div class="reveal d2" style="position:absolute; right:120px; top:150px; display:flex; gap:26px; align-items:flex-start">
+      <div class="phone" style="width:262px; margin-top:90px"><img src="assets/livur-vivi.jpg" alt="LIVUR: a IA Vivi encontra companhia"></div>
+      <div class="phone" style="width:262px"><img src="assets/livur-lista.jpg" alt="LIVUR: lista de experiências"></div>
+      <div class="phone" style="width:262px; margin-top:150px"><img src="assets/livur-juntos.jpg" alt="LIVUR: experiências em grupo"></div>
+    </div>
+  </section>
+
+  <!-- === 08 KADRIS === -->
+  <section class="slide" data-name="kadris">
+    
+    <div class="chrome"><span><b>Projeto</b> · Kadris</span><span>SaaS web · beta 2026</span></div>
+    <div class="body" style="right:auto; width:700px; gap:22px">
+      <div class="reveal">
+        <p class="tag">Você cola a URL. Ele faz o resto.</p>
+        <h2 style="margin-top:16px; font-size:50px">Time de marketing de IA, a primeira área do meu time executivo de IA.</h2>
+      </div>
+      <ul class="ticks reveal d1">
+        <li><b>Lê o site da marca</b> e monta um "Cérebro da Marca" com cores, tom de voz e produtos.</li>
+        <li><b>Time de agentes:</b> um chefe de gabinete divide o pedido entre diretor de arte, editor de vídeo e copy, que criam posts, carrosséis, anúncios e vídeos.</li>
+        <li><b>Aprende a cada aprovação:</b> a marca aprova pelo painel ou Telegram, o Cérebro evolui e o Kadris publica no Instagram e no TikTok.</li>
+      </ul>
+      <div class="strip reveal d2">
+        <div><span class="big m" style="font-size:48px">1.298</span><small>commits</small></div>
+        <div><span class="big" style="font-size:48px">149</span><small>projetos de<br>conteúdo</small></div>
+        <div><span class="big" style="font-size:48px">78</span><small>posts<br>publicados</small></div>
+      </div>
+      <a class="link reveal d3" href="https://kadris.ai/" target="_blank" rel="noopener">kadris.ai ↗</a>
+    </div>
+    <div class="reveal d2" style="position:absolute; right:120px; top:170px; width:960px; height:450px">
+      <div class="shot" style="height:100%"><img src="assets/kadris-biblioteca.jpg" alt="Kadris: biblioteca de criativos gerados" style="object-position:30% 0"></div>
+    </div>
+    <div class="reveal d3" style="position:absolute; right:120px; top:650px; width:960px; display:flex; flex-direction:column; gap:16px">
+      <p class="label">Engenharia</p>
+      <div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">Claude API</span><span class="chip">Vercel</span><span class="chip m">CI + testes E2E</span><span class="chip m">evals de IA</span><span class="chip m">monitoramento</span></div>
+      <p style="font-size:22px; color:var(--muted)">Testado primeiro nas minhas próprias marcas, antes de abrir o beta.</p>
+    </div>
+  </section>
+
+  <!-- === 09 LYVET === -->
+  <section class="slide" data-name="lyvet">
+    
+    <div class="chrome"><span><b>Projeto</b> · LYVET</span><span>E-commerce DTC · 2024–hoje</span></div>
+    <div class="body" style="gap:32px">
+      <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:60px">
+        <div>
+          <p class="tag">Laboratório de produto, dados e IA</p>
+          <h2 style="margin-top:18px; max-width:1200px">Minhas lojas rodam com agentes de IA e aprovação humana.</h2>
+        </div>
+        <div class="chips" style="flex-wrap:nowrap"><span class="flag">BR</span><span class="flag">US</span><span class="flag">MX</span><span class="flag">ES</span><span class="flag m">JP</span></div>
+      </div>
+      <div class="pipe reveal d1">
+        <div class="card"><span class="step">Catálogo</span><h3>Importação de produtos</h3><p>A IA lê o anúncio do fornecedor inteiro e monta título, descrição, medidas e variantes no padrão da loja.</p></div>
+        <div class="card"><span class="step">Localização</span><h3>Loja inteira em japonês</h3><p>150 produtos e o site todo adaptados às convenções do e-commerce japonês, com as regras legais do país.</p></div>
+        <div class="card"><span class="step">Imagem</span><h3>Fotos e criativos</h3><p>Fotos de produto num padrão único de estúdio e criativos de anúncio gerados com IA a partir de personas.</p></div>
+        <div class="card"><span class="step">Texto</span><h3>Copy e SEO</h3><p>Textos de produto, anúncios e blog, com Search Console configurado para medir.</p></div>
+        <div class="card"><span class="step">Mídia</span><h3>Anúncios no Meta</h3><p>Revisão semanal: o agente propõe o que pausar, escalar e testar, com os dados de cada decisão.</p></div>
+        <div class="card"><span class="step">Gestão</span><h3>Relatório diário</h3><p>Vendas, funil e retorno de anúncio todo dia. Nada que gasta ou publica sai sem a minha aprovação.</p></div>
+      </div>
+      <p class="reveal d2" style="font-size:22px; color:var(--muted)">Shopify · Meta Ads · Google Ads · GA4 · Claude · R$ 300k+ em vendas somadas entre as lojas.</p>
+    </div>
+  </section>
+
+
+  <!-- === PROFILE: WHY ME === -->
+  <section class="slide" data-name="perfil">
+    <div class="chrome"><span><b>Por que eu</b></span><span>Perfil</span></div>
+    <div class="body" style="gap:34px">
+      <div class="reveal">
+        <p class="tag">Produto bom é o que resolve o problema e faz o negócio crescer</p>
+        <h2 style="margin-top:16px; max-width:1600px">Um PM que circula pelo negócio inteiro, da conversa com o cliente ao código.</h2>
+      </div>
+      <div class="reveal d1" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; flex:1; min-height:0">
+        <div class="card"><span class="step">Produto</span><h3>0 → 1 e escala</h3><p>Matrículas e Cobranças do zero a 300+ escolas. B2B2C, web e mobile, sempre com os dois lados da jornada.</p></div>
+        <div class="card"><span class="step">Payments</span><h3>Dinheiro rodando</h3><p>Pix, boleto, cartão, régua de cobrança e integração com a Stone. R$ 200M+ transacionados.</p></div>
+        <div class="card"><span class="step">IA</span><h3>IA em produção</h3><p>Atendente de IA, créditos de IA com teto de custo, agentes de conteúdo e PRDs para agentes de código.</p></div>
+        <div class="card"><span class="step">Construção</span><h3>Eu mesmo construo</h3><p>Formado em sistemas pela Unicamp. App iOS e SaaS publicados com Claude Code, com testes e CI.</p></div>
+        <div class="card"><span class="step">Clientes e vendas</span><h3>CS e comercial</h3><p>Fui coordenador comercial e CX Manager: funil de aquisição, health score e churn de receita negativo. Na Lyds, liderei o time de CS.</p></div>
+        <div class="card"><span class="step">Liderança</span><h3>Direto com o CEO</h3><p>Reportei ao CEO na ClassApp, na isaac e na Lyds. Liderei 2 squads a convite do CEO e fiz parte do squad de cultura.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 10 STACK === -->
+  <section class="slide" data-name="stack">
+    
+    <div class="chrome"><span><b>Ferramentas &amp; formação</b></span><span>Stack</span></div>
+    <div class="body">
+      <h2 class="reveal">O que eu uso no dia a dia.</h2>
+      <div class="cols reveal d1" style="grid-template-columns:repeat(3,1fr); gap:60px">
+        <div class="stack"><p class="label">Produto e dados</p><div class="chips"><span class="chip">Figma</span><span class="chip">Jira</span><span class="chip">Miro</span><span class="chip">SQL</span><span class="chip">Metabase</span><span class="chip">GA4</span><span class="chip">Hotjar</span><span class="chip">A/B testing</span></div></div>
+        <div class="stack"><p class="label">IA</p><div class="chips"><span class="chip m">Claude</span><span class="chip m">Claude Code</span><span class="chip">OpenAI</span><span class="chip">ElevenLabs</span><span class="chip">HeyGen</span><span class="chip">Nano Banana</span><span class="chip">Remotion</span></div></div>
+        <div class="stack"><p class="label">Construção e negócio</p><div class="chips"><span class="chip">Next.js</span><span class="chip">React Native</span><span class="chip">Supabase</span><span class="chip">Vercel</span><span class="chip">Shopify</span><span class="chip">Stripe</span><span class="chip">WhatsApp Business API</span><span class="chip">Meta Ads</span><span class="chip">Google Ads</span></div></div>
+      </div>
+      <div class="rows reveal d2" style="margin-top:auto">
+        <div class="row"><span class="k">2012–2016</span><span class="v">UNICAMP · Tecnólogo em Análise e Desenvolvimento de Sistemas</span><span class="a"></span></div>
+        <div class="row"><span class="k">2021–2022</span><span class="v">Be Academy · MBA em Digital Marketing &amp; Business</span><span class="a"></span></div>
+        <div class="row"><span class="k">2022</span><span class="v">Tera · Liderança em Produto Digital</span><span class="a">PT nativo · EN avançado</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 11 CONTACT === -->
+  <section class="slide" data-name="contato">
+    
+    <div class="chrome"><span><b>Contato</b></span><span>Brian Tong · 2026</span></div>
+    <div class="body" style="flex-direction:row; align-items:center; gap:110px">
+      <img class="reveal" src="assets/brian-contato.jpg" alt="Brian Tong" style="width:420px; height:420px; border-radius:50%; object-fit:cover; object-position:50% 20%; border:2px solid var(--line); max-width:none; max-height:none">
+      <div class="stack reveal d1" style="flex:1; gap:44px">
+        <h2 style="font-size:70px">Precisa tirar um produto do papel e fazer ele dar resultado? Vamos conversar.</h2>
+        <div class="rows">
+          <div class="row" style="grid-template-columns:170px 1fr auto"><span class="k">E-MAIL</span><span class="v" style="user-select:all">briantong1994@gmail.com</span><span class="a"></span></div>
+          <div class="row" style="grid-template-columns:170px 1fr auto"><span class="k">LINKEDIN</span><span class="v"><a href="https://www.linkedin.com/in/brian-f-tong/" target="_blank" rel="noopener" style="color:inherit">linkedin.com/in/brian-f-tong</a></span><span class="a">↗</span></div>
+          <div class="row" style="grid-template-columns:170px 1fr auto"><span class="k">PROJETOS</span><span class="v"><a href="https://livur.app/" target="_blank" rel="noopener" style="color:inherit">livur.app</a> · <a href="https://kadris.ai/" target="_blank" rel="noopener" style="color:inherit">kadris.ai</a></span><span class="a">↗</span></div>
+          <div class="row" style="grid-template-columns:170px 1fr auto"><span class="k">BASE</span><span class="v">São Paulo · híbrido ou remoto</span><span class="a"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<nav class="deck-controls" aria-label="Navegação dos slides">
+  <button id="prevBtn" aria-label="Slide anterior">←</button>
+  <span class="count" id="count">1 / 13</span>
+  <button id="nextBtn" aria-label="Próximo slide">→</button>
+</nav>
+
+<script>
+/* === SLIDE PRESENTATION CONTROLLER ===
+   Arrows, space, PgUp/PgDn, Home/End, swipe, wheel, buttons; each slide has a #name. */
+class SlidePresentation {
+  constructor() {
+    this.slides = [...document.querySelectorAll('.slide')];
+    this.stage = document.getElementById('deckStage');
+    this.count = document.getElementById('count');
+    this.progress = document.getElementById('progress');
+    this.current = 0; this.lock = false;
+    const scale = () => {
+      const f = Math.min(innerWidth / 1920, innerHeight / 1080);
+      this.stage.style.transform = `translate(${(innerWidth - 1920 * f) / 2}px, ${(innerHeight - 1080 * f) / 2}px) scale(${f})`;
+    };
+    scale(); addEventListener('resize', scale);
+    document.addEventListener('keydown', (e) => {
+      if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) { e.preventDefault(); this.go(this.current + 1); }
+      else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); this.go(this.current - 1); }
+      else if (e.key === 'Home') this.go(0); else if (e.key === 'End') this.go(this.slides.length - 1);
+    });
+    let sx = 0, sy = 0;
+    document.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) this.go(this.current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    document.addEventListener('wheel', (e) => {
+      if (this.lock || Math.abs(e.deltaY) < 25) return;
+      this.lock = true; this.go(this.current + (e.deltaY > 0 ? 1 : -1)); setTimeout(() => { this.lock = false; }, 700);
+    }, { passive: true });
+    document.getElementById('prevBtn').addEventListener('click', () => this.go(this.current - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => this.go(this.current + 1));
+    addEventListener('hashchange', () => this.fromHash());
+    this.fromHash(true);
+  }
+  fromHash(initial) {
+    const i = this.slides.findIndex(s => s.dataset.name === location.hash.slice(1));
+    this.show(i >= 0 ? i : (initial ? 0 : this.current));
+  }
+  go(i) {
+    const n = Math.max(0, Math.min(i, this.slides.length - 1));
+    try { history.replaceState(null, '', '#' + this.slides[n].dataset.name); } catch (e) {}
+    this.show(n);
+  }
+  show(i) {
+    this.current = i;
+    this.slides.forEach((s, k) => { s.classList.toggle('active', k === i); s.classList.toggle('visible', k === i); });
+    this.count.textContent = `${i + 1} / ${this.slides.length}`;
+    this.progress.style.width = `${((i + 1) / this.slides.length) * 100}%`;
+  }
+}
+new SlidePresentation();
+</script>
+
+</body>
+</html>
