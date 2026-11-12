@@ -10,6 +10,8 @@
 <meta property="og:url" content="https://brianfutong.github.io/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="pt-BR" href="https://brianfutong.github.io/">
+<link rel="alternate" hreflang="en" href="https://brianfutong.github.io/en.html">
 <title>Brian Tong Portfólio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,6 +179,8 @@ a.link { font-family: var(--f-mono); font-size: 23px; color: var(--mint); text-d
 .deck-controls button:hover { background: rgba(255, 255, 255, 0.08); }
 .deck-controls button:focus-visible { outline: 2px solid #5CE0C6; outline-offset: 1px; }
 .deck-controls .count { color: #B7C4CE; font-size: 14px; min-width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+.deck-controls .lang { color: #5CE0C6; font-size: 13px; letter-spacing: 0.08em; text-decoration: none; padding: 0 12px 0 8px; border-left: 1px solid #24334A; height: 40px; display: grid; place-items: center; }
+.deck-controls .lang:hover { color: #EEF2F1; }
 .progress { position: fixed; left: 0; top: 0; height: 3px; background: #5CE0C6; z-index: 1001; transition: width 0.4s var(--ease); }
 </style>
 </head>
@@ -495,6 +499,7 @@ a.link { font-family: var(--f-mono); font-size: 23px; color: var(--mint); text-d
   <button id="prevBtn" aria-label="Slide anterior">←</button>
   <span class="count" id="count">1 / 13</span>
   <button id="nextBtn" aria-label="Próximo slide">→</button>
+<a class="lang" href="en.html" hreflang="en" aria-label="View in English">EN</a>
 </nav>
 
 <script>
